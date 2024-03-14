@@ -1,9 +1,11 @@
 const playerScore = document.querySelector(".player-point");
 const computerScore = document.querySelector(".computer-point");
 const command = document.querySelector(".command");
+const labels = document.querySelector(".labels");
+const textmuted = document.querySelector(".text-muted");
 const buttons = document.querySelectorAll("button")
 const body = document.querySelector("body");
-const h1 = document.querySelector("h1");
+const h2 = document.querySelector("h2");
 
 let playerChoice = ""
 
@@ -13,12 +15,31 @@ buttons.forEach((item) => {
         playerChoice = item.className
         playRound(playerChoice, getComputerChoice())
         if (playerScore.textContent == 5) {
-            h1.textContent = "You Won!"
+            h2.textContent = "You Won!"
             command.remove()
+            labels.remove()
+            textmuted.remove()
+            const button = document.createElement("button")
+            button.textContent = "Play Again"
+            button.className = "play-again btn btn-primary"
+            body.appendChild(button)
+            button.addEventListener('click', () => {
+                location.reload()
+            })
         } else if (computerScore.textContent == 5) {
-            h1.textContent = "You Lost!"
+            h2.textContent = "You Lost!"
             command.remove()
+            labels.remove()
+            textmuted.remove()
+            const button = document.createElement("button")
+            button.textContent = "Play Again"
+            button.className = "play-again btn btn-primary"
+            body.appendChild(button)
+            button.addEventListener('click', () => {
+                location.reload()
+            })
         }
+        
     })
 })
 

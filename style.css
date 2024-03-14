@@ -49,3 +49,13 @@ label {
     flex: 1;
     font-size: 20px;
 }
+
+.play-again {
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    font-size: 20px;
+    width: 200px;
+    margin: auto;
+    background-color: rgb(46, 63, 161);
+}
